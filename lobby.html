@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="stylesheet" href="../styling/login.css">
+  <script defer src="../script/login.js"></script>
+</head>
+
+<body>
+  <main id="main-holder">
+    <h1 name="title">LOBBY</h1>
+    <h2><i>LOBBY</i></h2>
+    
+    <div id="error-msg-holder">
+      
+    </div>
+    
+    <form id="lobby-form" method="POST" action="/">
+      <input type="text" name="username" id="username" class="lobby-form-field" placeholder="Choose your nickname" required="">
+      <hr>
+      <button type="submit" id="loginbtn" >Login</button>
+    </form>
+  </main>
+    <script>
+      const form = document.getElementById('lobby-form')
+      form.addEventListener('submit',login)
+      async function login(e){
+        e.preventDefault()
+        const username = document.getElementById('username').value
+        const body = {username, password}
+        const result = await fetch('http://localhost:5000/login',{
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json'},
+          body: JSON.stringify(body)
+        }).then((res)=>res.json())
+        if (result.status === 'ok') {
+					// everythign went fine
+					console.log('Got the token: ', result.data)
+					localStorage.setItem('token', result.data)
+          redirect()
+         // result.redirect('/client/index.html')
+					alert('Successfully logged in')
+				} else {
+					alert(result.error)
+				}
+      }
+    </script>
+    <script type="text/javascript">
+      function redirect()
+    {
+    window.location.href="../index.html";
+    }
+    </script>
+  
+</body>
+
+</html>
