@@ -1,0 +1,93 @@
+html {
+    height: 100%;
+}
+
+h1{
+    /*font-family: monospace;*/
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: bold;
+    color: cornflowerblue;
+    font-size: 60px;
+}
+
+h2{
+    font-size: 30px;
+    font-family: 'Times New Roman', Times, serif;
+    color: #3a3a3a;
+}
+
+p{
+    font-size: 16px;
+    font-family: 'Times New Roman', Times, serif;
+    color: #3a3a3a;
+}
+
+body {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    background: url(https://wallpapercave.com/wp/wp1951584.jpg);
+}
+
+#main-holder {
+    width: 30%;
+    height: 70%;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    background-color: white;
+    /*border-radius: 7px;
+    box-shadow: 0px 0px 5px 2px black;*/
+    opacity: 60%;
+}
+  
+#error-msg-holder {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 13px;
+    font-style: italic;
+    color: red;
+    font-weight: bold;
+}
+  
+#lobby-form {
+    align-self: flex-start;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+  
+.lobby-form-field::placeholder {
+    color: #3a3a3a;
+}
+  
+.lobby-form-field {
+    border: none;
+    border-bottom: 1px solid #3a3a3a;
+    margin-bottom: 10px;
+    border-radius: 3px;
+    outline: none;
+    padding: 0px 0px 5px 5px;
+    font-style: italic;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 14px;
+}
+
+#loginbtn {
+    width: 100%;
+    padding: 7px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    background-color: #3a3a3a;
+    cursor: pointer;
+    outline: none;
+}
